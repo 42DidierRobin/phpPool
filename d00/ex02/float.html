@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        header{
+            background-color:red;
+            height:100px;
+        }
+
+        div.page{
+            width:1000px;
+            margin:0 auto;
+        }
+
+        div.menu{
+            background-color: aqua;
+            float:left;
+            width:20%;
+        }
+
+        div.content{
+            background-color: coral;
+            float:left;
+            width:80%;
+            height:800px;
+            position: relative;
+        }
+
+        footer{
+            clear: both;
+            background-color: chartreuse;
+        }
+
+        div.toto{
+            background-color:yellow;
+            height:300px;
+            width:300px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+        }
+
+        div.search{
+            position: absolute;
+            bottom: -50px;
+            right: 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        je suis le header
+    </header>
+    <div class="page">
+        <div class="menu">
+            <ul>
+                <li><a href="#"></a>Home</li>
+                <li><a href="#"></a>a</li>
+                <li><a href="#"></a>b</li>
+                <li><a href="#"></a>c</li>
+                <li><a href="#"></a>d</li>
+            </ul>
+        </div>
+
+        <div class="content">
+            je suis le contenu
+            <div class="search">
+                <img src="resources/loupe.png" alt="">
+            </div>
+        </div>
+    </div>
+    <footer>
+        je suis le footer
+    </footer>
+    <div class="toto">
+        je suis toto
+    </div>
+</body>
+</html>
