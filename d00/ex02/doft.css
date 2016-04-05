@@ -146,6 +146,7 @@ img.arrow {
 }
 
 .content_m {
+    position: relative;
     float: left;
     margin: 8px 0px;
     height: 582px;
@@ -155,4 +156,20 @@ img.arrow {
     background-color: #909090;
     border-radius: 10px;
     box-shadow: 10px 10px 10px 0px #000000;
+}
+
+div.apple {
+    top:317px;
+    right:26px;
+    position: absolute;
+    height:155px;
+    width:200px;
+}
+
+div.ikea {
+    top:326px;
+    left:329px;
+    position: absolute;
+    height:141px;
+    width:136px;
 }
