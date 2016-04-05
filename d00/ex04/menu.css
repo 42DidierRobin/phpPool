@@ -1,0 +1,79 @@
+body {
+    background-color: antiquewhite;
+}
+
+.un {
+    margin-left: 10px;
+}
+
+.deux {
+    margin: 0px 10px;
+}
+
+.trois {
+    margin-right: 10px;
+}
+
+menu {
+    width: 100%;
+}
+
+.un:hover .dwitch {
+    display: block;
+}
+
+.deux:hover .bois {
+    display: block;
+}
+
+.trois:hover .dess {
+    display: block;
+}
+
+div.block {
+    float: left;
+}
+
+p.deco:hover {
+    background-color: aqua;
+}
+
+p.deco {
+    width: 65px;
+    height: 20px;
+    padding: 10px;
+    text-align: center;
+    background-color: darkgray;
+    border: 2px solid black;
+    margin: 0px;
+    border-radius: 12px;
+}
+
+p.deco:active {
+    background-color: red;
+}
+
+.block:active .text{
+    display: block !important;
+}
+
+p.dwitch {
+    display: none;
+}
+
+p.bois {
+    display: none;
+}
+
+.text {
+    position: absolute;
+    top:200px;
+    right: 100px;
+    display: none;
+    font-size: 10vh;
+    color:red;
+}
+
+p.dess {
+    display: none;
+}
