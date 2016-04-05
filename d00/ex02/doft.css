@@ -1,5 +1,5 @@
 body {
-    background-color: #646464;
+    background-color: #4f4f4f;
     padding: 0 15%;
 }
 
@@ -7,15 +7,91 @@ img {
     margin: 10px;
 }
 
+div.page {
+    width: 1420px;
+}
+
 header {
     position: relative;
     height: 137px;
-    width: 1420px;
+    width: 100%;
     margin: 12px auto;
 }
 
+.eye {
+    border: 5px solid red;
+    border-radius: 5px;
+    margin: 1px 1px 1px 0px !important;
+}
+
+.chat {
+    margin: 6px 1px 0px 0px !important;
+}
+
+.main {
+    margin: 0px 1px 0px 0px !important;
+}
+
+.tools {
+    margin: 0px 1px 0px 0px !important;
+}
+
+.book {
+    margin: 1px 0px 0px 5px !important;
+}
+
+.wall {
+    background-image: url("resources/brick.jpg");
+    width: 120px !important;
+    height: 70px !important;
+    margin: 1px 10px;
+}
+
+div.popup {
+    width: 500px !important;
+    height: 156px !important;
+    position: absolute;
+    top: 675px;
+    left: 260px;
+    background-color: rgb(143, 255, 127) !important;
+    padding: 7px 10px;
+}
+
+button {
+    position: absolute;
+    width: 78px;
+    margin-left: 8px;
+    border: 1px solid dimgrey;
+    border-radius: 1px;
+    background-color: aliceblue;
+}
+
+.classic {
+    font-size: 18px;
+    font-family: Arial;
+}
+
+
+.entrez {
+    font-size: 35px;
+    font-family: Georgia;
+}
+
+.ombre {
+    text-shadow: 4px 4px 5px #d12921;
+}
+
+.question {
+    font-style: italic;
+    font-size: 18px;
+}
+
+.towel {
+    margin: 6px 0px 0px 5px !important
+}
+
 .doft_img {
-    width: 430px;
+    width: 426px;
 }
 
 .cluster_img {
@@ -25,13 +101,13 @@ header {
 div.loupe {
     position: absolute;
     bottom: -34px;
-    right: 18px;
+    right: 20px;
     text-align: center;
 }
 
 div.close {
     position: absolute;
-    bottom: 0px;
+    bottom: -4px;
     right: 0px;
     text-align: center;
 }
@@ -44,36 +120,39 @@ div.reload {
 }
 
 .mini_icon {
-    width: 21px;
+    width: 20px;
     height: auto;
+}
+
+img.arrow {
+    margin-top: 1px;
+    margin-bottom: 6px;
+    margin-right: 1px;
 }
 
 .icon {
     width: 70px;
-    margin: 8px auto;
+    margin: 0px auto;
 }
 
 .side_box {
     text-align: center;
     float: left;
-    height: 400px;
-    width: 140px;
-    margin: 10px 0px;
-}
-
-div.content {
-    width: 1350px;
-    margin: 0 auto;
+    height: 411px;
+    width: 135px;
+    padding-right: 5px;
+    padding-top: 14px;
+    margin: 8px 30px;
 }
 
 .content_m {
     float: left;
-    margin: 11px 10px
-
+    margin: 8px 0px;
+    height: 582px;
 }
 
 .bubble {
-    background-color: #919191;
-    border-radius: 8px;
-    box-shadow: 10px 10px 10px 0px #111111;
+    background-color: #909090;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 0px #000000;
 }
