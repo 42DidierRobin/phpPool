@@ -25,6 +25,7 @@ function ft_split($string)
     }
     if(strlen($string))
         array_push($tab, $string);
+    sort($tab);
     return ($tab);
 }
 ?>
