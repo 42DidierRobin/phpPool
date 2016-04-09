@@ -1,32 +1,47 @@
 <?php
 
-    function p_error()
+    function p_end($str)
     {
-        echo "ERROR\n";
-    }
-    
-    function format($array)
-    {
-        return ($array['login']."\n".$array['passwd']."\n"."\n");
+        echo $str."\n";
+        exit(1);
     }
 
     $file = "./private/passwd";
     session_start();
+    $login = $_POST['login'];
+    $passwd = hash('whirlpool',$_POST['passwd']);
 
-    if (file_exist($file))
+    if (!$login || !$_POST['passwd'])
+        p_end('ERROR');
+
+    if (file_exists($file))
     {
-    } else
+        $content = unserialize(file_get_contents($file));
+        foreach ($content as $k => $v)
+        {
+            if ($login == $v['login'])
+                p_end('ERROR');
+        }
+        $_SESSION['passwd'] = $passwd;
+        $_SESSION['login'] = $login;
+        array_push($content, $_SESSION);
+        file_put_contents($file, serialize($content));
+        p_end('OK');
+    }
+    else
     {
         mkdir("./private");
 
-        if ($_SESSION['passwd'] && $_SESSION['login'])
+        if ($_POST['passwd'] && $_POST['login'] && $_POST['submit'] == 'OK')
         {
-            $_SESSION['passwd'] = $_GET['passwd'];
-            $_SESSION['login'] = $_GET['login'];
-            file_put_contents($file, format());
+            $_SESSION['passwd'] = $passwd;
+            $_SESSION['login'] = $login;
+            array($_SESSION['login'], $_SESSION['passwd']);
+            file_put_contents($file, serialize(array($_SESSION)));
+            p_end('OK');
         }
         else
-            p_error();
+            p_end('ERROR');
     }
 
 

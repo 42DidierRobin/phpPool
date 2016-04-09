@@ -14,7 +14,7 @@
     <form>
         Identifiant: <input type="text" name="login" value="sb" id="login">
         </br>
-        Mot de passe: <input type="password" name="login" value="beeone" id="password">
+        Mot de passe: <input type="password" name="passwd" value="beeone" id="passwd">
         <input class="submit" type="submit" name="submit" value="OK" id="submit">
     </form>
 </body></html>
