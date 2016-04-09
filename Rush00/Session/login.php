@@ -3,7 +3,7 @@
     include('../data/handle_data.php');
 
     session_start();
-    $content = ft_get_data('session');
+    $content = ft_get_data('../data/session');
     if ($content)
     {
         foreach ($content as $k => $v)

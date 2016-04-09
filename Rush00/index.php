@@ -1,5 +1,5 @@
 <?php
-    session_start();?>
+    session_start(); ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -14,12 +14,17 @@
     </header>
     <div class="page">
         <div class="categorie">
-            <?php
-                include ('generate_list.php');
-            ?>
+            <div class="categorie_header">
+                <p class="categorie">Categorie</p>
+            </div>
+            <div class="categorie_list">
+                <?php
+                    require_once('./index/generate_ctg_list.php');
+                ?>
+            </div>
         </div>
         <div class="tableau">
-            
+
         </div>
     </div>
     <div class="user">

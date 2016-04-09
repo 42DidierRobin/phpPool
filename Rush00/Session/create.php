@@ -3,7 +3,7 @@
     include('../data/handle_data.php');
 
     session_start();
-    $file = "session";
+    $file = "../data/session";
 
     if (!$_POST['login'] || !$_POST['pwd'] || $_POST['pwd'] != $_POST['pwd2'])
     {

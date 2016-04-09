@@ -18,12 +18,31 @@ header {
     border-radius: 5px;
 }
 
+p.categorie{
+    color:white;
+    text-align: center;
+}
+
+input.categorie{
+    text-align: left;
+}
+label.categorie {
+    text-align: left !important;
+}
+
+div.categorie_header {
+   text-align: center;
+}
+
+div.categorie_list{
+    padding-left: 5%;
+    text-align: left;
+}
+
 div.categorie {
     padding: 1%;
-    text-align: center;
-    float: left;
     height: 85%;
-    width: 10%;
+    width: 15%;
     margin: 1%;
     border: 2px solid rgba(255, 255, 255, 0.46);
     background-color: rgba(169, 169, 169, 0.55);
