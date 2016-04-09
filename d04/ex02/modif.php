@@ -10,7 +10,7 @@
     session_start();
 
     if (!$_POST['login'] || !$_POST['oldpw'] || !$_POST['newpw'])
-        p_end('ERROR1');
+        p_end('ERROR');
 
     $login = $_POST['login'];
     $oldpw = hash('whirlpool',$_POST['oldpw']);
@@ -23,7 +23,7 @@
             if ($login == $v['login'])
             {
                 if ($oldpw != $v['passwd'])
-                    p_end('ERROR2');
+                    p_end('ERROR');
                 else
                 {
                     $v['passwd'] = $newpw;
@@ -36,7 +36,7 @@
     }
     else
     {
-        p_end('ERROR3');
+        p_end('ERROR');
     }
 
 
