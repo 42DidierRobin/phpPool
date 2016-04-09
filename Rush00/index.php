@@ -15,7 +15,7 @@
     <div class="page">
         <div class="categorie">
             <div class="categorie_header">
-                <p class="categorie">Categorie</p>
+                <p class="categorie">Catégorie</p>
             </div>
             <div class="categorie_list">
                 <?php
@@ -24,7 +24,9 @@
             </div>
         </div>
         <div class="tableau">
-
+            <?php
+                require_once('./index/generate_article_list.php');
+            ?>
         </div>
     </div>
     <div class="user">

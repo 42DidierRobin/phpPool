@@ -26,8 +26,10 @@ p.categorie{
 input.categorie{
     text-align: left;
 }
+
 label.categorie {
     text-align: left !important;
+    color: #293e74;
 }
 
 div.categorie_header {
@@ -40,6 +42,7 @@ div.categorie_list{
 }
 
 div.categorie {
+    float:left;
     padding: 1%;
     height: 85%;
     width: 15%;
@@ -81,7 +84,28 @@ div.user {
     border-radius: 5px;
 }
 
+div.tableau {
+    padding: 15px;
+    width: 70%;
+    float: left;
+}
+
 .button {
     width: 80%;
     text-align: center;
+}
+
+div.article {
+    width: 10%;
+    float: left;
+    margin: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.46);
+}
+
+img.object {
+
+}
+
+p.id {
+
 }
