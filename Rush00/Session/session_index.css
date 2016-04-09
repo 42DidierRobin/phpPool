@@ -1,0 +1,45 @@
+
+body {
+    background-color: #c7fff1;
+}
+
+.new_session_link{
+    position: absolute;
+    bottom: 15px;
+    left: 111px;
+    color: #7a85ff;
+    text-align: center;
+}
+input.button {
+    width: 142px;
+    text-align: center;
+    position: relative;
+}
+
+div.error {
+    color: red;
+    text-align: center;
+}
+
+.text_input{
+    align:center;
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    width:142px;
+    height:21px;
+    margin: 10px;
+}
+
+.form_box {
+    position: absolute;
+    top:30%;
+    left:30%;
+    padding: 10px;
+    width: 300px;
+    height: 150px;
+    border: 2px solid darkgray;
+    box-shadow: #4d349a;
+    border-radius: 10px;
+    text-align: center;
+    background-color: rgba(169, 169, 169, 0.55);
+}
