@@ -1,4 +1,27 @@
 
+
+header {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    color: white;
+    height: 100px;
+    width: 95%;
+    margin: 1%;
+    border: 2px solid rgba(255, 255, 255, 0.46);
+    background-color: rgba(169, 169, 169, 0.55);
+    border-radius: 5px;
+}
+
+a.header {
+    text-decoration: none;
+    color: white;
+}
+
+a.header:hover{
+    color: orangered;
+}
+
 body {
     background-color: #c7fff1;
 }

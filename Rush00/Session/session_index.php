@@ -5,6 +5,10 @@
     <link rel="stylesheet" type="text/css" href="session_index.css"/>
 </head>
 <body>
+    <header>
+        <a class="header" href="../index.php?platforms=Toutes" class="href">
+            Incredible video games website</a>
+    </header>
     <div class="form_box">
         <form action="login.php" method="post">
             <input type="text" class="text_input" placeholder="Pseudo" name="login" id="login"></br>

@@ -16,6 +16,15 @@ header {
     border: 2px solid rgba(255, 255, 255, 0.46);
     background-color: rgba(169, 169, 169, 0.55);
     border-radius: 5px;
+    color: white;
+}
+
+a.header {
+    text-decoration: none;
+}
+
+a.header:hover{
+    color: orangered;
 }
 
 p.categorie{
@@ -23,13 +32,22 @@ p.categorie{
     text-align: center;
 }
 
-input.categorie{
-    text-align: left;
+a:hover{
+    color: orangered;
 }
 
-label.categorie {
-    text-align: left !important;
-    color: #293e74;
+a.categorie_lien:hover{
+    color: orangered;
+}
+
+a.inscription:hover{
+    color: orangered;
+}
+
+a.categorie_lien {
+    text-decoration: none;
+    color: #ffffff;
+    margin-bottom: 3px;
 }
 
 div.categorie_header {
@@ -44,7 +62,7 @@ div.categorie_list{
 div.categorie {
     float:left;
     padding: 1%;
-    height: 85%;
+    height: auto;
     width: 15%;
     margin: 1%;
     border: 2px solid rgba(255, 255, 255, 0.46);
@@ -59,12 +77,12 @@ a.inscription {
     font-size: 18px;
     font-style: italic;
     text-decoration: none;
-    color: #c7fff1;
+    color: #ffffff;
 }
 
 div.page {
     float: left;
-    height: 500px;
+    height: auto;
     width: 80%;
     margin: 1%;
     border: 2px solid rgba(255, 255, 255, 0.46);
@@ -86,8 +104,8 @@ div.user {
 
 div.tableau {
     padding: 15px;
-    width: 70%;
-    float: left;
+    width: 75%;
+    float: right;
 }
 
 .button {
@@ -96,16 +114,17 @@ div.tableau {
 }
 
 div.article {
-    width: 10%;
+    width: 120px;
+    height: 180px;
     float: left;
     margin: 5px;
     border: 2px solid rgba(255, 255, 255, 0.46);
 }
 
 img.object {
-
+    width: 95%;
 }
 
-p.id {
-
+p.object {
+    font-size: 14px;
 }

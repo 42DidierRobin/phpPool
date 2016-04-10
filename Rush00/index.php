@@ -9,7 +9,8 @@
 
 <body>
     <header>
-        Header
+        <a class="header" href="./index.php?platforms=Toutes" class="hef">
+        Incredible video games website</a>
         <a class="inscription" href="./Session/session_create.php">S'inscrire</a>
     </header>
     <div class="page">
@@ -34,14 +35,14 @@
 
             if ($_SESSION['login'])
             {
-                echo $_SESSION['login']."\n";
-                echo '<a href="./Session/logout.php">
-            <input class="delog" type="button" value="de-log !" ></input></a>';
+                echo $_SESSION['login'].($_SESSION['admin'] ? ' (admin)':'');
+                echo '</br><a href="./Session/logout.php">
+            <input platforms="delog" type="button" value="de-log !" ></input></a>';
             } else
             {
                 echo "Bonjour";
                 echo '</br><a href="./Session/session_index.php">
-            <input class="button" type="button" value="Log-in !" ></input></a>';
+            <input platforms="button" type="button" value="Log-in !" ></input></a>';
             }
         ?>
 

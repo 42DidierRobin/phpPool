@@ -28,6 +28,9 @@
     }
     $_SESSION['pwd'] = $pwd;
     $_SESSION['login'] = $login;
+    $_SESSION['admin'] = FALSE;
+    $_SESSION['panier'] = array();
+    
     if (!$content)
         $content = array($_SESSION);
     else
