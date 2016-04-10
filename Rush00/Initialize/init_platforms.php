@@ -12,11 +12,12 @@
             foreach ($temp as $i => $j)
             {
                 if (!array_search($j, $list))
-                array_push($list, $j);
+                    array_push($list, $j);
             }
         }
         sort($list);
         $list = array_unique($list);
+        array_filter($list);
         array_unshift($list, 'Toutes');
         ft_save_data('../data/platforms', $list);
     }

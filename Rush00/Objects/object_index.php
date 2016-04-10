@@ -22,8 +22,8 @@
     }
     if ($_SESSION["admin"])
     {
-        $modif = '<form action="article_modif.php" method="post"><input type="hidden" name="id" value="'.$object["id"].'"><input type="submit" name="submit" value="Modifier"></form>';
-        $suppr = '<form action="delete_article.php" method="post"><input type="hidden" name="id" value="'.$object["id"].'"><input type="submit" name="submit" value="Supprimer"></form>';
+        $modif = '<form class="form_button" action="article_modif.php" method="post"><input type="hidden" name="id" value="'.$object["id"].'"><input class="admin_button" type="submit" name="submit" value="Modifier"></form>';
+        $suppr = '<form class="form_button" action="delete_article.php" method="post"><input type="hidden" name="id" value="'.$object["id"].'"><input class="admin_button" type="submit" name="submit" value="Supprimer"></form>';
     }
 
     echo '
@@ -31,7 +31,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Jeux</title>
-    <link rel="stylesheet" href="object_index.css">
+    <link rel="stylesheet" href="../index.css">
 </head>
 
 <body>
@@ -47,14 +47,14 @@
             <p class="info_m">Nom:</br></p> '.$object['name'].'</br>
             <p class="info_m">Platforms:</br></p> '.$platform.'</br>
             <p class="info_m">Prix:</br></p> '.$object['prix'].'</br>
-            <p class="info_m">Description:</br></p> '.$object['resume'].'</br>'.$modif.'<br/>
+            <p class="info_m">Description:</br></p> '.$object['resume'].'</br>'.$modif.'<br/><br/>
             '.$suppr.'<br/></p>';
         echo '<a href="../panier/buy.php?id='.$object['id'].'" class="buy">acheter</a>';
         echo '</div></div></div><div class="user">';
     if ($_SESSION['login'])
     {
         $total = 0;
-        echo $_SESSION['login'].($_SESSION['admin'] ? ' (admin)' : '');
+        echo '<p class="panier_titre">'.$_SESSION['login'].($_SESSION['admin'] ? ' (admin)' : '').'</p>';
         echo '</br><a href="../Session/logout.php">
                 <input class="delog" type="button" value="de-log !" ></input></a>
                 <p class="panier_titre">panier:</p><div class="panier">';
@@ -75,8 +75,15 @@
                 $total = $total + $v['prix'];
             }
         }
-        echo $total;
-        echo '</p></div>';
+        echo '<p class="prix">'.$total.'</p>';
+        echo '</p>';
+        if ($_SESSION['admin'])
+        {
+            echo('</br></br><a class="action" href="./article_create.php">Ajouter un jeu</a><br/></br>
+                        <a class="action" href="./create_class.php.php">Ajouteur une Platforme</a></br></br>
+                        <a class="action" href="./modif_articles_list.php">Modifier un jeu</a>');
+        }
+        echo '</div>';
     } else
     {
         echo "Bonjour";

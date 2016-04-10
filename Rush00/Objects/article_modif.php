@@ -8,24 +8,23 @@ include("ft_strclass.php");
 <head>
     <meta charset="UTF-8">
     <title>Modifier un article</title>
-    <link rel="stylesheet" type="text/css" href="article_modif.css"/>
+    <link rel="stylesheet" type="text/css" href="../index.css"/>
 </head>
 <body>
 	<header>
 		<a  href="../index.php?platforms=Toutes" class="hef header">
 			Incredible video games website</a>
 	</header>
-    <div class="form_box_display">
+    <div class="form_box_display_modif">
     	<div class="comp_article_left">
     		<h1>Informations actuelles</h1>
     		<?php
     		$article = ft_get_article($_POST["id"]);
-			echo('<div>Identifiant:<br/>'.
+			echo('<div>Nom: '.
 				$article["name"].'<br><br/>
-				Prix:<br/>'.$article["prix"].'<br/><br/>
-				Plateforme:<br/>'.ft_strclass($article["platforms"]).'<br/><br/>"
-				Image:<br/>
-				<img class="object" src='.$article["img"]["large"].'><br/><br/>
+				Prix: '.$article["prix"].'<br/><br/>
+				Plateforme: '.ft_strclass($article["platforms"]).'<br/><br/>"
+				<img class="object modif" src='.$article["img"]["large"].'><br/><br/>
 				Resume:<br/>
 				'.$article["resume"].'</div>');
 

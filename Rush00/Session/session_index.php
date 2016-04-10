@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="session_index.css"/>
+    <link rel="stylesheet" type="text/css" href="../index.css"/>
 </head>
 <body>
     <header>

@@ -35,7 +35,7 @@
             if ($_SESSION['login'])
             {
                 $total = 0;
-                echo $_SESSION['login'].($_SESSION['admin'] ? ' (admin)' : '');
+                echo '<p class="panier_titre">'.$_SESSION['login'].($_SESSION['admin'] ? ' (admin)' : '').'</p>';
                 echo '</br><p class="panier_titre">panier:</p><div class="panier">';
                 if (!$_SESSION['panier'])
                     echo 'panier vide';
@@ -54,13 +54,14 @@
                         $total = $total + $v['prix'];
                     }
                 }
-                echo $total;
+                echo $total.'</p>';
                 echo '</p>';
                 echo '<a href="./Session/logout.php"><input class="delog" type="button" value="de-log !" ></input></a>';
                 if ($_SESSION['admin'])
                 {
-                    echo('<a href="Objects/article_create.php">Ajouter un jeu</a><br/>
-                        <a href="Objects/modif_articles_list.php">Modifier un jeu</a>');
+                    echo('</br></br><a class="action" href="Objects/article_create.php">Ajouter un jeu</a><br/></br>
+                        <a class="action" href="Objects/create_class.php">Ajouteur une Platforme</a></br></br>
+                        <a class="action" href="Objects/modif_articles_list.php">Modifier un jeu</a>');
                 }
             } else
             {
