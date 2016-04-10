@@ -7,7 +7,7 @@
 </head>
 <body>
     <header>
-        <a class="header" href="../index.php?platforms=Toutes" class="href">
+        <a href="../index.php?platforms=Toutes" class="href header">
             Incredible video games website</a>
     </header>
     <div class="form_box">

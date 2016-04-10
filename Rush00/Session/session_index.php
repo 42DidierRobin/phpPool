@@ -6,7 +6,7 @@
 </head>
 <body>
     <header>
-        <a class="header" href="../index.php?platforms=Toutes" class="href">
+        <a href="../index.php?platforms=Toutes" class="href header" >
             Incredible video games website</a>
     </header>
     <div class="form_box">
@@ -17,7 +17,7 @@
                 <?php  if ($_GET['error'] == 1) {echo "Erreur: veuillez recommencer";}
                 elseif ($_GET['error'] == 2) {echo "Cet utilisateur n'existe pas";} ?>
             </div>
-            <input class="button" class="submit_button" type="submit" value="Log in" id="login"></br>
+            <input class="button submit_button" type="submit" value="Log in" id="login"></br>
         </form>
         <a href="create.php" class="new_session_link">Creer une session</a>
     </div>

@@ -16,10 +16,10 @@
         );
         $context = stream_context_create($opts);
 
-        for ($i = 0; $i < 200; $i++)
+        for ($i = 0; $i < 1000; $i++)
         {
-            $temp = 'http://www.giantbomb.com/api/game/3030-'.(4042 + $i).'/?api_key='.$api_key.'&format=JSON'.$field_list;
-            $a = (array)json_decode(file_get_contents($temp, false, $context));
+            $temp = 'http://www.giantbomb.com/api/game/3030-'.(5042 + $i).'/?api_key='.$api_key.'&format=JSON'.$field_list;
+            @$a = (array)json_decode(file_get_contents($temp, false, $context));
             if ($a['error'] != 'OK')
                 $i++;
             else

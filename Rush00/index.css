@@ -13,34 +13,35 @@ header {
     height: 100px;
     width: 95%;
     margin: 1%;
+    padding-top: 2%;
     border: 2px solid rgba(255, 255, 255, 0.46);
     background-color: rgba(169, 169, 169, 0.55);
     border-radius: 5px;
-    color: white;
 }
 
 a.header {
     text-decoration: none;
+    color: white;
 }
 
-a.header:hover{
+a.header:hover {
     color: orangered;
 }
 
-p.categorie{
-    color:white;
+p.categorie {
+    color: white;
     text-align: center;
 }
 
-a:hover{
+a:hover {
     color: orangered;
 }
 
-a.categorie_lien:hover{
+a.categorie_lien:hover {
     color: orangered;
 }
 
-a.inscription:hover{
+a.inscription:hover {
     color: orangered;
 }
 
@@ -51,16 +52,16 @@ a.categorie_lien {
 }
 
 div.categorie_header {
-   text-align: center;
+    text-align: center;
 }
 
-div.categorie_list{
+div.categorie_list {
     padding-left: 5%;
     text-align: left;
 }
 
 div.categorie {
-    float:left;
+    float: left;
     padding: 1%;
     height: auto;
     width: 15%;
@@ -91,6 +92,7 @@ div.page {
 }
 
 div.user {
+    position: relative;
     padding: 1%;
     text-align: center;
     float: left;
@@ -113,12 +115,18 @@ div.tableau {
     text-align: center;
 }
 
+div.article:hover {
+    border-color: black;
+}
+
 div.article {
+    padding-top: 2px;
     width: 120px;
     height: 180px;
     float: left;
     margin: 5px;
-    border: 2px solid rgba(255, 255, 255, 0.46);
+    border: 2px solid transparent;
+    border-radius: 5px;
 }
 
 img.object {
@@ -127,4 +135,39 @@ img.object {
 
 p.object {
     font-size: 14px;
+    text-decoration: none;
+    color: white;
+}
+
+input.delog {
+    position: absolute;
+    width: 40%;
+    bottom: 5%;
+    left: 30%;
+}
+
+div.panier {
+    background-color: rgba(255, 169, 30, 0.37);
+    color: black;
+    border: 2px solid white;
+    min-height: 60px;
+    height: auto;
+    width: 100%;
+    margin-top: 0px;
+}
+
+p.panier_titre {
+    font-style: italic;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+a.clean:hover {
+    color: orangered;
+}
+
+a.clean {
+    font-style: italic;
+    text-decoration: none;
+    color: #ffffff;
 }

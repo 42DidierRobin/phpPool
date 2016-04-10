@@ -9,8 +9,8 @@
 
 <body>
     <header>
-        <a class="header" href="./index.php?platforms=Toutes" class="hef">
-        Incredible video games website</a>
+        <a href="./index.php?platforms=Toutes" class="hef header">
+            Incredible video games website</a>
         <a class="inscription" href="./Session/session_create.php">S'inscrire</a>
     </header>
     <div class="page">
@@ -32,19 +32,39 @@
     </div>
     <div class="user">
         <?php
-
             if ($_SESSION['login'])
             {
-                echo $_SESSION['login'].($_SESSION['admin'] ? ' (admin)':'');
-                echo '</br><a href="./Session/logout.php">
-            <input platforms="delog" type="button" value="de-log !" ></input></a>';
+                $total = 0;
+                echo $_SESSION['login'].($_SESSION['admin'] ? ' (admin)' : '');
+                echo '</br><p class="panier_titre">panier:</p><div class="panier">';
+                if (!$_SESSION['panier'])
+                    echo 'panier vide';
+                else
+                {
+                    foreach ($_SESSION['panier'] as $k => $v)
+                    {
+                        echo $v['name'].'</br>';
+                    }
+                }
+                echo '</div><a href="./panier/clean.php" class="clean">Vider panier</a></br><p class="panier">Total panier : ';
+                if ($_SESSION['panier'])
+                {
+                    foreach ($_SESSION['panier'] as $k => $v)
+                    {
+                        $total = $total + $v['prix'];
+                    }
+                }
+                echo $total;
+                echo '</p>';
+                echo '<a href="./Session/logout.php"><input class="delog" type="button" value="de-log !" ></input></a>';
             } else
             {
                 echo "Bonjour";
-                echo '</br><a href="./Session/session_index.php">
-            <input platforms="button" type="button" value="Log-in !" ></input></a>';
+                echo '</br><a href="./Session/session_index.php"><input class="button" type="button" value="Log-in !" ></input></a>';
             }
         ?>
+
+    </div>
 
 </body>
 </html>
