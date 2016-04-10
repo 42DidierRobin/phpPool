@@ -57,6 +57,11 @@
                 echo $total;
                 echo '</p>';
                 echo '<a href="./Session/logout.php"><input class="delog" type="button" value="de-log !" ></input></a>';
+                if ($_SESSION['admin'])
+                {
+                    echo('<a href="Objects/article_create.php">Ajouter un jeu</a><br/>
+                        <a href="Objects/modif_articles_list.php">Modifier un jeu</a>');
+                }
             } else
             {
                 echo "Bonjour";

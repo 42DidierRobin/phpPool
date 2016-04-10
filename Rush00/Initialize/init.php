@@ -5,7 +5,7 @@
     include ('./init_platforms.php');
     include ('./init_users.php');
 
-    //init_articles();
+    init_articles();
     init_platforms();
     init_users();
     echo "fin de linitialisation";

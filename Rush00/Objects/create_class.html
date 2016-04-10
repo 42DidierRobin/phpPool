@@ -1,11 +1,22 @@
-<!DOCTYPE html>
-<meta charset="UTF-8">
-<html>
-  <head>
-	<form action="create_class.php" method="post">
-	  Nom:<br/>
-	  <input type="text" name="id"><br/><br/>
-	  <input type="submit" name="submit" value="ok">
-	</form>
-  </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Creer un article</title>
+    <link rel="stylesheet" type="text/css" href="article_create.css"/>
+</head>
+<body>
+    <div class="form_box">
+        <form action="create_class.php" method="post">
+        	Entrez un nom de plate-forme pour la creer:<br/>
+            <input type="text" class="text_input" placeholder="Nom de la plateforme" name="class_name" id="class_name" required></br>
+            <input type="submit" name="submit" value="Creer" required>
+            <div class="error">
+                <?php  if ($_GET['error'] == 1) {echo "Erreur: veuillez recommencer";}
+                        elseif ($_GET['error'] == 2) {echo "Utilisateur déjà existant";} ?>
+            </div>
+        </form>
+    	<a href="article_create.php">Creer un article</a><br/><br/>
+		<a href="modif_articles_list.php">Modifier un article</a>
+    </div>
+</body>
 </html>

@@ -20,6 +20,11 @@
         $platform = $platform.', '.$object['platforms'][$i];
         $i++;
     }
+    if ($_SESSION["admin"])
+    {
+        $modif = '<form action="article_modif.php" method="post"><input type="hidden" name="id" value="'.$object["id"].'"><input type="submit" name="submit" value="Modifier"></form>';
+        $suppr = '<form action="delete_article.php" method="post"><input type="hidden" name="id" value="'.$object["id"].'"><input type="submit" name="submit" value="Supprimer"></form>';
+    }
 
     echo '
 <html lang="en">
@@ -42,7 +47,8 @@
             <p class="info_m">Nom:</br></p> '.$object['name'].'</br>
             <p class="info_m">Platforms:</br></p> '.$platform.'</br>
             <p class="info_m">Prix:</br></p> '.$object['prix'].'</br>
-            <p class="info_m">Description:</br></p> '.$object['resume'].'</br></p>';
+            <p class="info_m">Description:</br></p> '.$object['resume'].'</br>'.$modif.'<br/>
+            '.$suppr.'<br/></p>';
         echo '<a href="../panier/buy.php?id='.$object['id'].'" class="buy">acheter</a>';
         echo '</div></div></div><div class="user">';
     if ($_SESSION['login'])
