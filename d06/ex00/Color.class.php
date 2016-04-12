@@ -10,18 +10,16 @@
         
         public function __construct(array $kwargs)
         {
-            foreach ($kwargs as $k => $v)
-                $v = (int)$v;
             if (!array_key_exists('rgb', $kwargs))
             {
-                $this->red = $kwargs['red'];
-                $this->green = $kwargs['green'];
-                $this->blue = $kwargs['blue'];
+                $this->red = (int)$kwargs['red'];
+                $this->green = (int)$kwargs['green'];
+                $this->blue = (int)$kwargs['blue'];
             } else
             {
-                $this->red = ($kwargs['rgb'] >> 16) & 0xFF;
-                $this->green = ($kwargs['rgb'] >> 8) & 0xFF;
-                $this->blue = ($kwargs['rgb']) & 0xFF;
+                $this->red = (int)($kwargs['rgb'] >> 16) & 0xFF;
+                $this->green = (int)($kwargs['rgb'] >> 8) & 0xFF;
+                $this->blue = (int)($kwargs['rgb']) & 0xFF;
             }
             if (self::$verbose)
                 echo $this.' constructed.'."\n";
