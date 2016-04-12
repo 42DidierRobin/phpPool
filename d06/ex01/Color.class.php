@@ -36,8 +36,8 @@
         public function __toString()
         {
             return ('Color( red:'.str_pad($this->red, 4, " ", STR_PAD_LEFT).
-                ', green: '.str_pad($this->green, 4, " ", STR_PAD_LEFT).
-                ', blue: '.str_pad($this->blue, 4, " ", STR_PAD_LEFT)." )");
+                ', green:'.str_pad($this->green, 4, " ", STR_PAD_LEFT).
+                ', blue:'.str_pad($this->blue, 4, " ", STR_PAD_LEFT)." )");
         }
 
         public static function doc()
