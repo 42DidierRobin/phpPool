@@ -1,0 +1,8 @@
+
+<- Triangle ----------------------------------------------------------------------
+Triangle is a simple class object handling triangles.
+
+The constructor has to be called with 3 Vertex with A,B and C respectivly as keys in arrays
+All the setters and getters are given for you convienance.
+This class has no method.
+---------------------------------------------------------------------- Triangle ->
