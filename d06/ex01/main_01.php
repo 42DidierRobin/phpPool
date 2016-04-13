@@ -10,6 +10,7 @@
 
 require_once 'Color.class.php';
 require_once 'Vertex.class.php';
+    require_once '../error.php';
 
 Color::$verbose = False;
 

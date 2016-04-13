@@ -1,6 +1,7 @@
 <?php
 
 require_once './Color.class.php';
+    require_once '../error.php';
 
 
 print( Color::doc() );

@@ -77,7 +77,7 @@
                 $this->matrix['w']['vtcX'], $this->matrix['w']['vtcY'], $this->matrix['w']['vtcZ'], $this->matrix['w']['vtc0']));
         }
 
-        public function doc()
+        public static function doc()
         {
             return (file_get_contents('./Matrix.doc.txt'));
         }
@@ -192,6 +192,7 @@
             foreach (array_keys($this->matrix) as $i)
                 foreach (array_keys($this->matrix['x']) as $j)
                     $temp->matrix[$i][$j] = $this->matrix[$i][$j];
+            self::$verbose = $oldVerbose;
             return ($temp);
         }
 
@@ -200,9 +201,12 @@
             $oldVerbose = self::$verbose;
             self::$verbose = false;
             $temp = new Matrix(array('preset' => Matrix::IDENTITY));
+            $swap_tab = array('x' => 'vtcX', 'y' => 'vtcY', 'z' => 'vtcZ', 'w' => 'vtc0',
+                              'vtcX' => 'x', 'vtcY' => 'y', 'vtcZ' => 'z', 'vtc0' => 'w');
             foreach (array_keys($this->matrix) as $i)
                 foreach (array_keys($this->matrix['x']) as $j)
-                    $temp->matrix[$i][$j] = $this->matrix[$j][$i];
+                    $temp->matrix[$i][$j] = $this->matrix[$swap_tab[$j]][$swap_tab[$i]];
+            self::$verbose = $oldVerbose;
             return ($temp);
         }
     }

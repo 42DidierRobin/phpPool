@@ -76,7 +76,7 @@
                 $this->matrix['w']['vtcX'], $this->matrix['w']['vtcY'], $this->matrix['w']['vtcZ'], $this->matrix['w']['vtc0']));
         }
 
-        public function doc()
+        public static function doc()
         {
             return (file_get_contents('./Matrix.doc.txt'));
         }

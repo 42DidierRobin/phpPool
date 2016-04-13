@@ -31,29 +31,29 @@
             if(self::$verbose)
                 echo "Camera instance constructed\n";
         }
-
+        
         private function createMatrix()
         {
             $this->_tT = new Matrix(array('preset' => Matrix::TRANSLATION,
                                           'vtc' => (new Vector(array (
                                               'dest' => $this->_origin)))->opposite()));
-            $this->_tR= $this->_orientation->symetryMatrix();
-            $this->_view = $this->_tT->mult($this->_tR);
+            $this->_tR = $this->_orientation->symetryMatrix();
+            $this->_view = $this->_tR->mult($this->_tT);
             $this->_project = new Matrix(array('preset' => Matrix::PROJECTION,
                                                'fov' => $this->_fov, 'ratio' => $this->_ratio,
                                                'near' => $this->_near, 'far' => $this->_far));
         }
         
-        public function doc()
+        public static function doc()
         {
             return (file_get_contents('./Camera.doc.txt'));
         }
 
         public function __toString()
         {
-            return (sprintf("Camera(\n+ Origine: ".$this->_origin."+ tT:\n".$this->_tT.
-                            "+ tR:".$this->_tR."+ tR->mult( tT ):".$this->_view.
-                            "+ Proj:".$this->_project.")\n"));
+            return (sprintf("Camera( \n+ Origine: ".$this->_origin."\n"."+ tT:\n".$this->_tT."\n".
+                            "+ tR:\n".$this->_tR."\n"."+ tR->mult( tT ):\n".$this->_view."\n".
+                            "+ Proj:\n".$this->_project."\n".")"));
         }
 
         public function __destruct()

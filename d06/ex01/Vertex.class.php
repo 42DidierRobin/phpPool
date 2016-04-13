@@ -42,7 +42,7 @@
                 return ($ret.' )');
         }
 
-        public function doc()
+        public static function doc()
         {
             return (file_get_contents('./Vertex.doc.txt'));    
         }
