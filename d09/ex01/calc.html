@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>It's over 9000</title>
+    <style>
+        #calculette {
+            text-align: center;
+            padding: 5%;
+            vertical-align: middle;
+            margin-top: 50vh;
+            transform: translateY(-50%);
+            margin-left: 20%;
+            margin-right: 20%;
+            background-color: #111168;
+            border-radius: 5px;
+            box-shadow: 10px 10px 10px black;
+        }
+    </style>
+    <script>
+        var left;
+        var right;
+        var sign;
+
+        window.onload = function () {
+            left = document.querySelector("#left");
+            right = document.querySelector("#right");
+            sign = document.querySelector("#sign");
+            submit = document.querySelector("#tryme");
+            submit.addEventListener('click', launch);
+            setInterval(useMe, 30000);
+        }
+
+        function launch() {
+            if (checkContent(left, right))
+                doTheMath(left, right, sign);
+            else
+                alert("Error :(")
+        }
+
+        function checkContent(left, right) {
+            left = left.value;
+            right = right.value;
+            left = parseInt(left, 10);
+            right = parseInt(left, 10);
+            return (left >= 0 && right >= 0);
+        }
+
+        function doTheMath(left, right, sign) {
+            var result;
+            left = parseInt(left.value, 10);
+            right = parseInt(right.value, 10);
+            sign = sign.value;
+            console.log(sign);
+            switch (sign) {
+                case 'add':
+                    result = left + right;
+                    break;
+                case 'sub':
+                    result = left - right;
+                    break;
+                case 'mult':
+                    result = left * right;
+                    break;
+                case 'div':
+                    if (right == 0) {
+                        alert('It\'s over 9000!');
+                        console.log('It\'s over 9000!');
+                        return;
+                    }
+                    else
+                        result = left / right;
+                    break;
+                case 'mod':
+                    if (right == 0) {
+                        alert('It\'s over 9000!');
+                        console.log('It\'s over 9000!');
+                        return;
+                    }
+                    else
+                        result = left / right;
+                    break;
+                default:
+                        alert("Error :(");
+            }
+            alert (result);
+            console.log(result);
+        }
+
+        function useMe() {
+            alert("Please, use me...");
+        }
+
+    </script>
+</head>
+<body>
+    <div id="calculette">
+        <input type="text" id="left">
+        <select name="signe" id="sign">
+            <option value="add">+</option>
+            <option value="mult">*</option>
+            <option value="sub">-</option>
+            <option value="div">/</option>
+            <option value="mod">%</option>
+        </select>
+        <input type="text" id="right"><br/><br/>
+        <input type="submit" value="Try me!" id="tryme">
+    </div>
+</body>
+</html>

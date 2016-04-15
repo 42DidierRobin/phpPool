@@ -30,26 +30,16 @@
 
         public function fabricate($requested)
         {
-            $bool;
             foreach ($this->list_fighter as $k => $v)
             {
                 if ($v->getName() == $requested)
                 {
                     echo "(Factory fabricates a fighter of type ".$v."\n";
-                    $bool = $v;
                     return clone $v;
-                } else
-                {
-                    echo "(Factory hasn't absorbed any fighter of type ".$v."\n";
-                    $bool = false;
-                    return (null);
                 }
             }
-            if ($bool)
-                return clone $bool;
-            else
-                return (null);
-
+            echo "(Factory hasn't absorbed any fighter of type ".$requested."\n";
+            return (null);
         }
 
     }

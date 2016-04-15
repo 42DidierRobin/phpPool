@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Veuillez souffler dans le ballon</title>
+    <link rel="stylesheet" href="balloon.css">
+    <style>
+        #balloon {
+        display: block;
+        vertical-align: middle;
+        margin-top : 50vh;
+        transform: translateY(-50%);
+        margin-left: auto;
+        margin-right: auto;
+        height: 200px;
+        width: 200px;
+        background-color: red;
+        border-radius: 100px;
+    }</style>
+    <script>
+        var balloon;
+        var color;
+        var on_ballon = false;
+
+        window.onload = function () {
+            initColor();
+            balloon = document.querySelector("#balloon");
+            balloon.addEventListener('click', onClickBallon);
+            balloon.addEventListener('mouseout', onMouseOut);
+        }
+
+        function _color(value) {
+            this.value = value;
+            this.next = null;
+            //this.previous = null;
+        }
+
+        function initColor() {
+
+            color = new _color('red');
+            color.next = new _color('green');
+            color.next.next = new _color('blue');
+            color.next.next.next = color;
+            color.previous = color.next.next;
+            color.next.previous = color;
+            color.next.next.previous = color.next;
+        }
+
+        function onClickBallon() {
+
+            var newSize;
+            color = color.next;
+            this.style.backgroundColor = color.value;
+            newSize = this.offsetWidth + 10;
+            this.style.width = newSize + "px";
+            this.style.height = newSize + "px";
+            if (newSize > 420) {
+                this.style.width = "200px";
+                this.style.height = "200px";
+                this.style.borderRadius = "100px";
+            }
+            else {
+                newSize /= 2;
+                this.style.borderRadius = newSize + "px";
+            }
+        }
+
+        function onMouseOut()
+        {
+            console.log("called");
+            var newSize;
+            color = color.previous;
+            this.style.backgroundColor = color.value;
+            newSize = this.offsetWidth - 5;
+            if (newSize > 200) {
+                this.style.width = newSize + "px";
+                this.style.height = newSize + "px";
+                newSize /= 2;
+                this.style.borderRadius = newSize + "px";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="balloon">
+    </div>
+</body>
+</html>

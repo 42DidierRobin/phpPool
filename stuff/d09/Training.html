@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var toto;
+        var couilles;
+
+        window.onload = function (){
+            toto = document.querySelector("#toto");
+            couilles = document.querySelector("#couilles");
+            console.log(couilles);
+            addEvent();
+            toto.style.color = 'red';
+        };
+
+        function addEvent(){
+            toto.addEventListener("click", salut);
+        }
+
+        function salut(){
+            console.log("salut");
+            createElem();
+        }
+
+        function createElem(){
+            var tmp = document.createElement("h1");
+            tmp.innerHTML = "bonjour les enfants";
+            tmp.addEventListener("click", remove);
+            console.log(tmp);
+            couilles.appendChild(tmp);
+        }
+
+        function remove(){
+            console.log(this);
+            this.parentElement.removeChild(this);
+        }
+
+    </script>
+</head>
+<body>
+    <div id="toto">bonjour</div>
+    <ul id="couilles">
+        <li>salut</li>
+        <li>toto</li>
+        <li>salut</li>
+        <li>salut</li>
+        <li>salut</li>
+    </ul>
+</body>
+</html>
